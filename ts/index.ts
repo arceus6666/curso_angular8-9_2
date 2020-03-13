@@ -105,7 +105,7 @@ const sumar = (a: number, b: number): number => {
 
 // console.log(sumar(1,2))
 
-const cuadrado = n => n * n
+const cuadrado = (n: number): number => n * n
 
 // console.log(cuadrado(10))
 
@@ -114,31 +114,32 @@ const emitir = () => "Hola funcion"
 // console.log(emitir())
 
 class Persona {
-    nombre: String;
-    paterno: String;
-    materno: String;
-    constructor(nombre: String, paterno?: String, materno?:String) {
-        this.nombre = nombre;
-        this.paterno = paterno;
-        this.materno = materno;
+    private _nombre: String;
+    private _paterno: String;
+    private _materno?: String;
+    constructor(nombre: String, paterno: String, materno?: String) {
+        this._nombre = nombre;
+        this._paterno = paterno;
+        this._materno = materno;
     }
 
-    nombreCompleto = () => `${this.nombre} ${this.paterno} ${this.materno}`
+    nombreCompleto = () => `${this._nombre} ${this._paterno} ${this._materno}`
 
-    public get Nombre(): String {
-        return this.nombre;
+    public get nombre(): String {
+        return this._nombre;
     }
 
-    
-    public set Nombre(nombre : String) {
-        this.nombre = nombre;
+    public set nombre(nombre: String) {
+        this._nombre = nombre;
     }
-    
+
 }
 
 let persona = new Persona('Name', 'last');
 
-console.log(persona.Nombre)
+// console.log(persona.nombreCompleto())
+
+
 
 
 

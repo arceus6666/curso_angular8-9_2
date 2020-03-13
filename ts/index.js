@@ -1,3 +1,4 @@
+"use strict";
 var mensaje = "Hola Typescript";
 // console.log(mensaje);
 var nombre = 'Daniel';
@@ -20,7 +21,7 @@ opciones = false;
 opciones = 'hola ts';
 opciones = {
     brillo: 70,
-    contraste: 80
+    contraste: 80,
 };
 // console.log(opciones)
 var listaOpciones = [];
@@ -46,8 +47,8 @@ var configuraciones = {
     refresco: 60,
     tono: {
         brillo: 90,
-        contraste: 70
-    }
+        contraste: 70,
+    },
 };
 // for (let configuracion in configuraciones) {
 //     console.log(configuracion)
@@ -79,17 +80,17 @@ var emitir = function () { return "Hola funcion"; };
 var Persona = /** @class */ (function () {
     function Persona(nombre, paterno, materno) {
         var _this = this;
-        this.nombreCompleto = function () { return _this.nombre + " " + _this.paterno + " " + _this.materno; };
-        this.nombre = nombre;
-        this.paterno = paterno;
-        this.materno = materno;
+        this.nombreCompleto = function () { return _this._nombre + " " + _this._paterno + " " + _this._materno; };
+        this._nombre = nombre;
+        this._paterno = paterno;
+        this._materno = materno;
     }
-    Object.defineProperty(Persona.prototype, "Nombre", {
+    Object.defineProperty(Persona.prototype, "nombre", {
         get: function () {
-            return this.nombre;
+            return this._nombre;
         },
         set: function (nombre) {
-            this.nombre = nombre;
+            this._nombre = nombre;
         },
         enumerable: true,
         configurable: true
@@ -97,4 +98,4 @@ var Persona = /** @class */ (function () {
     return Persona;
 }());
 var persona = new Persona('Name', 'last');
-console.log(persona.Nombre);
+// console.log(persona.nombreCompleto())
