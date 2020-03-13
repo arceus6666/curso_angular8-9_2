@@ -18,10 +18,6 @@ var Producto = /** @class */ (function () {
         get: function () {
             return this._precio;
         },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Producto.prototype, "precion", {
         set: function (v) {
             this._precio = v;
         },
@@ -35,4 +31,23 @@ var leche = {
     precio: 9,
 };
 var producto = new Producto(leche);
-console.log(producto);
+// console.log(producto)
+var listaResponse = [
+    {
+        nombre: 'a',
+        precio: 1
+    },
+    {
+        nombre: 'b',
+        precio: 2
+    },
+];
+var listaProductos = [];
+for (var _i = 0, listaResponse_1 = listaResponse; _i < listaResponse_1.length; _i++) {
+    var item = listaResponse_1[_i];
+    listaProductos.push(new Producto(item));
+}
+listaProductos.map(function (e) {
+    e.precio += e.precio * 0.13;
+});
+console.log(listaProductos);

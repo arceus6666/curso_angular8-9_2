@@ -24,7 +24,7 @@ class Producto {
     }
 
 
-    public set precion(v: number) {
+    public set precio(v: number) {
         this._precio = v;
     }
 
@@ -42,4 +42,28 @@ const leche: IProducto = {
 
 let producto = new Producto(leche);
 
-console.log(producto)
+// console.log(producto)
+
+const listaResponse: Array<IProducto> = [
+    {
+        nombre: 'a',
+        precio: 1
+    },
+    {
+        nombre: 'b',
+        precio: 2
+    },
+]
+
+let listaProductos: Array<Producto> = []
+
+for (let item of listaResponse){
+    listaProductos.push(new Producto(item));
+}
+
+listaProductos.map((e)=>{
+    e.precio += e.precio * 0.13
+})
+
+console.log(listaProductos)
+
