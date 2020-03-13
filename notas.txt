@@ -1,0 +1,4 @@
+foreach func es mas lenta q el for of
+
+solo puede heredar una clase
+se pueden implementar varias interfaces
