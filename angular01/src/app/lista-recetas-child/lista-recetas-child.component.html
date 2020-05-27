@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Lista de recetas Child</h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <li *ngFor="let receta of lista">
+          {{receta.titulo}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-12">
+      <button class="btn btn-info" type="button" (click)="consultar()">
+        Consultar
+      </button>
+    </div>
+  </div> -->
+  
+</div>

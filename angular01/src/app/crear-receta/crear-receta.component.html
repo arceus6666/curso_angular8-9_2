@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-12">
+      <h1>Crear receta</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">T</span>
+        </div>
+        <input type="text" [(ngModel)]="titulo" class="form-control" placeholder="Título" aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon2">D</span>
+        </div>
+        <input type="text" [(ngModel)]="descripcion" class="form-control" placeholder="Descripción"
+          aria-label="Username" aria-describedby="basic-addon2">
+      </div>
+
+      <div class="input-group mb-3">
+        <button type="button" class="btn btn-success" (click)="guardar()">
+          Guardar
+        </button>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
