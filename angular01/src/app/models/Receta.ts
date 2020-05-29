@@ -1,11 +1,17 @@
+interface IReceta {
+  _titulo?: string;
+  _descripcion?: string;
+  _ingredientes?: string;
+}
+
 export class Receta {
   private _titulo: string;
   private _descripcion: string;
-  ingredientes: any[];
+  private _ingredientes: any[];
 
-  constructor(t, d) {
-    this._titulo = t;
-    this._descripcion = d;
+  constructor(receta: IReceta) {
+    this._titulo = receta._titulo;
+    this._descripcion = receta._descripcion;
   }
 
 

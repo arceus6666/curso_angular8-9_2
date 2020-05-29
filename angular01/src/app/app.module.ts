@@ -8,6 +8,11 @@ import { ListaRecetasComponent } from './lista-recetas/lista-recetas.component';
 import { CrearRecetaComponent } from './crear-receta/crear-receta.component';
 import { CrearRecetaChildComponent } from './crear-receta-child/crear-receta-child.component';
 import { ListaRecetasChildComponent } from './lista-recetas-child/lista-recetas-child.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BuscarRecetaComponent } from './buscar-receta/buscar-receta.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -15,11 +20,15 @@ import { ListaRecetasChildComponent } from './lista-recetas-child/lista-recetas-
     ListaRecetasComponent,
     CrearRecetaComponent,
     CrearRecetaChildComponent,
-    ListaRecetasChildComponent
+    ListaRecetasChildComponent,
+    NavbarComponent,
+    BuscarRecetaComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

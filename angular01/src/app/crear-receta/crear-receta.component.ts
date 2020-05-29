@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NuevaRecetaService } from '../services/nueva-receta.service';
 import { Receta } from '../models/Receta';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-receta',
@@ -18,7 +19,8 @@ export class CrearRecetaComponent implements OnInit {
   }
 
   guardar(): void {
-    this.recetaService.setReceta(new Receta(this.titulo, this.descripcion));
+    this.recetaService.setReceta(new Receta({_titulo: this.titulo, _descripcion: this.descripcion}));
+    Swal.fire({title: 'Guardado'});
   }
 
 }

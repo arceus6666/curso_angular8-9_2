@@ -7,15 +7,29 @@ import { Subject, Observable } from 'rxjs';
 })
 export class NuevaRecetaService {
 
+  private lista: Array<Receta> = [];
+
   private _receta: Subject<Receta> = new Subject<Receta>();
 
-  constructor() { }
+  constructor() {
+    const recetas = JSON.parse(localStorage.getItem('recetas')) || [];
+    console.log(recetas);
+    for(const receta of recetas){
+      this.lista.push(new Receta(receta));
+    }
+  }
+
+  get ListaRecetas() {
+    return this.lista;
+  }
 
   getReceta(): Observable<Receta> {
     return this._receta.asObservable();
   }
 
   setReceta(receta: Receta) {
+    this.lista.push(receta);
+    localStorage.setItem('recetas', JSON.stringify(this.lista));
     this._receta.next(receta);
   }
 }

@@ -11,9 +11,6 @@ export class AppComponent implements OnInit {
   listaRecetasPadre: Array<Receta> = [];
 
   ngOnInit(): void {
-    this.listaRecetasPadre.push(new Receta('Pan', '1'));
-    this.listaRecetasPadre.push(new Receta('Leche', '1'));
-    this.listaRecetasPadre.push(new Receta('Naranja', '1'));
   }
   // title = 'angular01';
 

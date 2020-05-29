@@ -19,7 +19,7 @@ export class CrearRecetaChildComponent implements OnInit {
   }
 
   guardar() {
-    this.receta.emit(new Receta(this.titulo, this.descripcion));
+    this.receta.emit(new Receta({_titulo: this.titulo, _descripcion: this.descripcion}));
   }
 
 }

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12">
+    <h1>Buscar Receta</h1>
+  </div>
+
+  <div class="col-12">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">?</span>
+      </div>
+      <input type="text" [(ngModel)]="termino" class="form-control" placeholder="Título" aria-label="Username"
+        aria-describedby="basic-addon1" (ngModelChange)='cambio($event)'>
+    </div>
+  </div>
+  <div class="col-12">
+    <app-lista-recetas-child [lista]="listaRecetas"></app-lista-recetas-child>
+  </div>
+</div>

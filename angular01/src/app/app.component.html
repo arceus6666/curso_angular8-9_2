@@ -1,12 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-      <app-lista-recetas></app-lista-recetas>
-      <app-lista-recetas-child [lista]="listaRecetasPadre"></app-lista-recetas-child>
-    </div>
-    <div class="col-6">
-      <app-crear-receta></app-crear-receta>
-      <app-crear-receta-child (receta)="agregarReceta($event)"></app-crear-receta-child>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
