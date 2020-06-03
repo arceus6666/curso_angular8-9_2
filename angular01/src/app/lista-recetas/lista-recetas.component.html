@@ -4,23 +4,47 @@
       <h1>Lista de recetas</h1>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
       <ul>
-        <li *ngFor="let receta of lista">
-          <h2>{{receta.titulo}}</h2>
+        <li *ngFor="let receta of lista | slice:0:2">
+          <h2>{{ receta.titulo }}</h2>
+          <ul>
+            <li>
+              <h6>
+                Cantidad: <small>{{receta.cantidad}}</small>
+              </h6>
+            </li>
+            <li>
+              <h6>
+                Descripcion: <small>{{receta.descripcion | truncar: '10'}}</small>
+              </h6>
+            </li>
+            <li>
+              <h6>
+                Fecha: <small>{{receta.fecha | date: 'dd/MM/yyyy'}}</small>
+              </h6>
+            </li>
+            <li>
+              <h6>
+                Popularidad: <small>{{ receta.popularidad | percent: '.1-2'}}</small>
+              </h6>
+            </li>
+            <li>
+              <h6>
+                Precio: <small>{{ receta.precio | currency:'BOB':'symbol-narrow'}}</small>
+              </h6>
+            </li>
+            <li>
+              <h6>
+                En dolares: <small>{{ receta.precio | dolares | currency:'USD':'symbol-narrow'}}</small>
+              </h6>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- <div class="row">
-    <div class="col-12">
-      <button class="btn btn-info" type="button" (click)="consultar()">
-        Consultar
-      </button>
-    </div>
-  </div> -->
-  
 </div>

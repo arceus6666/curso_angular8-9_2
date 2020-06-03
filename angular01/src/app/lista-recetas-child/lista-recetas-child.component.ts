@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Receta } from '../models/Receta';
+import { Receta } from '../models/Receta.class';
 
 @Component({
   selector: 'app-lista-recetas-child',

@@ -13,6 +13,8 @@ import { BuscarRecetaComponent } from './buscar-receta/buscar-receta.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { TruncarPipe } from './pipes/truncar.pipe';
+import { DolaresPipe } from './pipes/dolares.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CrearRecetaChildComponent,
     ListaRecetasChildComponent,
     NavbarComponent,
-    BuscarRecetaComponent
+    BuscarRecetaComponent,
+    TruncarPipe,
+    DolaresPipe
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,38 @@
       </div>
 
       <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon3">D</span>
+        </div>
+        <input type="number" [(ngModel)]="cantidad" class="form-control" placeholder="Cantidad"
+          aria-label="Username" aria-describedby="basic-addon2">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon4">F</span>
+        </div>
+        <input type="date" [(ngModel)]="fecha" class="form-control" placeholder="Fecha"
+          aria-label="Username" aria-describedby="basic-addon2">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon5">P</span>
+        </div>
+        <input type="number" [(ngModel)]="popularidad" class="form-control" placeholder="Popularidad"
+          aria-label="Username" aria-describedby="basic-addon2">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon6">$</span>
+        </div>
+        <input type="number" [(ngModel)]="precio" class="form-control" placeholder="Precio"
+          aria-label="Username" aria-describedby="basic-addon2">
+      </div>
+
+      <div class="input-group mb-3">
         <button type="button" class="btn btn-success" (click)="guardar()">
           Guardar
         </button>

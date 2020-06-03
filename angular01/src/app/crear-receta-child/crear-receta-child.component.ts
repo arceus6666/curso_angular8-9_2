@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Receta } from '../models/Receta';
+import { Receta } from '../models/Receta.class';
 
 @Component({
   selector: 'app-crear-receta-child',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Receta } from '../models/Receta';
+import { Receta } from '../models/Receta.class';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class NuevaRecetaService {
   constructor() {
     const recetas = JSON.parse(localStorage.getItem('recetas')) || [];
     console.log(recetas);
-    for(const receta of recetas){
+    for (const receta of recetas) {
       this.lista.push(new Receta(receta));
     }
   }

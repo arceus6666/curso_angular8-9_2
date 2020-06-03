@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Receta } from '../models/Receta';
+import { Receta } from '../models/Receta.class';
 import { NuevaRecetaService } from '../services/nueva-receta.service';
 import { Subscription } from 'rxjs';
 
@@ -13,10 +13,12 @@ export class ListaRecetasComponent implements OnInit, OnDestroy {
   lista: Receta[] = [];
   sub: Subscription;
 
+  // numeroPi = 3.14265314567;
+
   constructor(private recetaService: NuevaRecetaService) { }
 
   ngOnInit(): void {
-    console.log('sub');
+    // console.log('sub');
     this.sub = this.recetaService.getReceta().subscribe((receta: Receta) => {
       this.lista.push(receta);
     });
@@ -26,7 +28,7 @@ export class ListaRecetasComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
-    console.log('unsub')
+    // console.log('unsub');
   }
 
 
