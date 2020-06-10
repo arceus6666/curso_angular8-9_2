@@ -14,6 +14,7 @@ app.use(cors());
 
 app.use('/auth', require('./routes/auth'));
 app.use('/usuarios', [verificaToken, verificaUsuario, verificaAdmin], require('./routes/usuario'));
+// app.use('/usuarios', require('./routes/usuario'));
 app.use('/categorias', [verificaToken, verificaUsuario, logs], require('./routes/categoria'));
 app.use('/productos', [verificaToken, verificaUsuario, logs], require('./routes/productos'));
 
