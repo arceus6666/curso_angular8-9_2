@@ -2,6 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGuard } from './auth.guard';
+import { BaseComponent } from './base/base.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -14,9 +16,17 @@ const routes: Routes = [
     children: [
       {
         path: 'usuarios',
-        loadChildren: () => import('./modules/usuarios/usuarios.module').then(m => m.UsuariosModule), pathMatch: 'full'
+        loadChildren: () => import('./modules/usuarios/usuarios.module').then(m => m.UsuariosModule)
+      },
+      {
+        path: '',
+        component: BaseComponent
       }
     ]
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 

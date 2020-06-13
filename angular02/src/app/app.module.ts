@@ -7,11 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './jwt.interceptor';
+import { BaseComponent } from './base/base.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NoAutorizadoInterceptor } from './no-autorizado.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    BaseComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,8 @@ import { JwtInterceptor } from './jwt.interceptor';
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: NoAutorizadoInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
