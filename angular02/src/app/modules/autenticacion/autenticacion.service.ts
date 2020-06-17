@@ -29,4 +29,8 @@ export class AutenticacionService {
   public logout() {
     sessionStorage.removeItem('currentUser');
   }
+
+  public currentUser() {
+    return JSON.parse(sessionStorage.getItem('currentUser'));
+  }
 }

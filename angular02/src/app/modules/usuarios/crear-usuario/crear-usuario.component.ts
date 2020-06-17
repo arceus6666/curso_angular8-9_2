@@ -5,6 +5,7 @@ import { ApiService } from '../api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Rol } from '../models/roles.interface';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -14,6 +15,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CrearUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
+  roles: Rol[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,6 +32,11 @@ export class CrearUsuarioComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       rol: new FormControl('', [Validators.required]),
     });
+
+    this.roles = [
+      { title: 'Administrador', value: 'ADMIN_ROLE' },
+      { title: 'Usuario', value: 'USER_ROLE' }
+    ];
   }
 
   get f() {

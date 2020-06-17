@@ -11,6 +11,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+// import { SelectionModel } from '@angular/cdk/collections';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { JwtInterceptor } from 'src/app/jwt.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -22,16 +28,28 @@ import { EditarusuarioComponent } from './editar-usuario/editar-usuario.componen
 
 
 @NgModule({
-  declarations: [ListaUsuariosComponent, DetalleUsuarioComponent, CrearUsuarioComponent, BorrarUsuarioConfirmacionComponent, EditarusuarioComponent],
+  declarations: [
+    ListaUsuariosComponent,
+    DetalleUsuarioComponent,
+    CrearUsuarioComponent,
+    BorrarUsuarioConfirmacionComponent,
+    EditarusuarioComponent
+  ],
   imports: [
     CommonModule,
+    // SelectionModel,
     MatTableModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatCheckboxModule,
     MatSnackBarModule,
+    MatSortModule,
     MatDialogModule,
     MatListModule,
+    MatChipsModule,
+    MatSelectModule,
+    MatPaginatorModule,
     MatBottomSheetModule,
     MatInputModule,
     ReactiveFormsModule,

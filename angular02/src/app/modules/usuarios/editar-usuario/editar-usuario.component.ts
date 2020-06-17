@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Usuario } from '../../usuarios/models/usuario.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Rol } from '../models/roles.interface';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -13,6 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EditarusuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
+  roles: Rol[];
+
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
@@ -28,6 +31,10 @@ export class EditarusuarioComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       rol: new FormControl('', [Validators.required]),
     });
+    this.roles = [
+      { title: 'Administrador', value: 'ADMIN_ROLE' },
+      { title: 'Usuario', value: 'USER_ROLE' }
+    ];
     this.cargarDatos();
   }
 

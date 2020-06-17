@@ -20,7 +20,7 @@ export class NoAutorizadoInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(catchError((error: any) => {
       if (error instanceof HttpErrorResponse) {
         const mensaje = error.error.mensaje || error.message;
-        if (error.status === 401) {
+        if (error.status === 401 || error.status === 403) {
           this.auth.logout();
           this.router.navigate(['/auth/login']);
         }
